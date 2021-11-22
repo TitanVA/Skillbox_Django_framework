@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% if advertisements %}
+    {% for advertisement in advertisements %}
+        <ul>
+            <li>
+                {{ advertisement.title }} Цена: {{ advertisement.price }}
+                <p>
+                    Дата создания: {{ advertisement.created_at }}
+                </p>
+                <p>
+                    Количество просмотров: {{ advertisement.views_count }}
+                </p>
+            </li>
+        </ul>
+    {% endfor %}
+{% else %}
+    <p> Объявлений нет </p>
+{% endif %}
+
+
+</body>
+</html>

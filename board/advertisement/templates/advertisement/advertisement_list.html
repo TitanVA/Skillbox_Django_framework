@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Бесплатные объявления</title>
+</head>
+<body>
+
+<h1>Бесплатные объявления</h1>
+
+{% if advertisements %}
+    <ul>
+        {% for advertisement in advertisements %}
+            <li>
+                <a href="/advertisements/{{ advertisement.id }}">{{ advertisement.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Объявлений нет</p>
+{% endif %}
+
+<p>
+    <a href="http://127.0.0.1:8000/">Назад</a>
+</p>
+
+</body>
+</html>
