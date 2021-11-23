@@ -41,11 +41,15 @@ INSTALLED_APPS = [
     'app_employment',
     'app_media',
     'app_goods',
+    'app_logic',
+    'app_pages',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -116,6 +120,14 @@ USE_L10N = True
 
 USE_TZ = True
 
+LANGUAGES = [
+    ("ru", "Русский"),
+    ("en", "English"),
+    ("de", "Deutsche"),
+]
+
+LOCALE_PATHS = [os.path.join(BASE_DIR, "locale"),]
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
@@ -124,3 +136,6 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = "/"
 
 SESSION_COOKIE_AGE = 30 * 24 * 60 * 60
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+MEDIA_URL = "/media/"
